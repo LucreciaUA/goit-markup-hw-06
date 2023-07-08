@@ -365,6 +365,10 @@ modal window
     margin-bottom: 8px;
 }
 
+.modal-form-field:nth-child(4){
+    margin-bottom: 16px
+}
+
 .modal-input-name{
     display: block;
     font-size: 12px;
@@ -423,7 +427,7 @@ modal window
     color: rgba(46, 47, 66, 0.4);
     background-color: transparent;
     outline: transparent;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment::placeholder{
