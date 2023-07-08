@@ -5,6 +5,7 @@
 --background-color-team: #F4F4FD;
 --text-color-main: #434455;
 --text-color-headline: #2E2F42;
+--text-color-modal: #8E8F99;
 --link-color-active: #404BBF;
 --button-color-filter:#F4F4FD;
 --text-color-light: #F4F4FD;
@@ -19,6 +20,7 @@
 --modal-window-color: #FCFCFC;
 --overlay-color: #4D5AE5;
 --icon-light-fill: #f4f4fd;
+
 }
 /*
 |||||||||||||||||||||||||||||||||||||||
@@ -353,27 +355,29 @@ modal window
     font-family: Roboto;
     font-weight: 500;
     line-height: 24px;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.02em;
     padding-bottom: 16px;
+    color: var(--text-color-headline);
 }
-.modal-form-fild{
+.modal-form-field{
     display: block;
-    position: relative;
+    padding-bottom: 8px;
 }
 
 .modal-input-name{
     display: block;
     font-size: 12px;
     font-family: Roboto;
-    font-style: normal;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.48px;
-    color: #8E8F99;
+    color: var(--text-color-modal);
     padding-bottom: 4px;
-    padding-top: 8px;
-}
 
+}
+.input-field{
+    position: relative;
+}
 .modal-input{
     height: 40px;
     width: 100%;
@@ -383,6 +387,7 @@ modal window
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
+    outline: transparent;
     appearance: none;
     color: var(--text-color-main);
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -396,7 +401,8 @@ modal window
 .icon-modal{
     position: absolute;
     left: 18px;
-    bottom: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     fill: var(--text-color-headline);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -410,8 +416,12 @@ modal window
     margin-bottom: 16px;
     resize: none;
     font-size: 12px;
-    letter-spacing: 0.48px;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.04em;
+    line-height: 1.17;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    outline: transparent;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment::placeholder{
@@ -424,24 +434,28 @@ modal window
     opacity: 0;
 }
 
+.checkbox-container{
+    margin-bottom: 24px;
+}
 .pp-text{
     color: #8E8F99;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.48px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
 
 }
 
-.pp-text a{
+.pp-link{
     color: var(--icon-social-peace);
 
 }
 
 .privacy-policy:checked + .pp-text .custom-checkbox{
-    border: 1px solid var(--icon-social-active-fist);
+    border: none;
     background-color: var(--icon-social-active-fist);
+    fill: var(--background-color-team)
 
 }
 .custom-checkbox{
@@ -452,7 +466,10 @@ modal window
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+            border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+            fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-checked{
     opacity: 0;
@@ -466,24 +483,25 @@ modal window
     min-width: 169px;
     display: block;
     padding: 16px 32px;
+    cursor: pointer;
     margin: 0 auto;
     border-radius: 4px;
     background: var(--button-filer-text);
     color: var(--background-color-white);
     text-align: center;
     font-size: 16px;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.64px;
     border: none;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 24px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submit:focus, .submit:hover{
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        background-color: var(--link-color-active);
 }
 
 @keyframes modal-animation{
@@ -773,23 +791,21 @@ footer .third-hl{
 }
 .subscribe{
     width: 264px;
+    height: 40px;
     border-radius: 4px;
     border: 1px solid var(--white, #FFF);
-
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     color: var(--background-color-white);
-    background-color: var(--background-color-dark);
+    background-color: transparent;
     font-size: 12px;
-    line-height: 2;
-    letter-spacing: 0.48px;
-    padding: 8px 16px;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
 }
 
-.subscribe:focus,
-.subscribe:hover{
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+.subscribe::placeholder{
+    color: #fff;
 }
-
 
 .subscribe:focus::placeholder{
     opacity: 0;
@@ -798,9 +814,10 @@ footer .third-hl{
 .subscribe-footer{
     font-size: 16px;
     line-height: 1.2;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
     display: block;
+    color: #fff;
     
 }
 
@@ -810,6 +827,9 @@ footer .third-hl{
 }
 
 .subscribe-btn{
+    min-width: 165px;
+    height: 40px;
+    cursor: pointer;
     display: inline-flex;
     padding: 8px 24px;
     justify-content: center;
@@ -819,9 +839,8 @@ footer .third-hl{
     border: none;
     color: var(--background-color-white);
     text-align: center;
-    gap: 16px;
     font-size: 16px;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.64px;
@@ -835,6 +854,7 @@ footer .third-hl{
 
 .subscribe-btn .icon{
     fill: var(--background-color-white);
+    margin-left: 16px;
 }
 
 
