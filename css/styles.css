@@ -801,6 +801,7 @@ footer .third-hl{
     line-height: 1.5;
     letter-spacing: 0.04em;
     padding-left: 16px;
+    outline: transparent;
 }
 
 .subscribe::placeholder{
