@@ -51,7 +51,7 @@ body{
 img{
     display: block;
     max-width: 100%;
-        object-fit: cover;
+    object-fit: cover;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol{
@@ -64,7 +64,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
 
 .link{
     text-decoration: none;
-    color: var();
 }
 
 .btn{
@@ -79,10 +78,27 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
 }
 
 .container{
-    width: 1158px;
+    min-width: 396px;
+    max-width: 428px;
     margin: 0 auto;
-    padding: 0px 15px;
+    padding: 0 16px;
 }
+
+@media only screen and (min-width: 768px) {
+   .container
+   {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+   .container
+    {
+    max-width: 1158px;
+    padding: 0px 15px;
+  }
+}
+
 
 
 .headline{
@@ -533,33 +549,60 @@ Benefit(2nd section) styles
 */
 
 .benefit-block{
-    padding: 120px 0;
-}
-.benefits{
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
+    padding: 96px 0;
+    
 }
 
-.benefit{
-    width: calc((100% - 72px) / 4);
+.benefit:not(:last-child){
+    margin-bottom: 72px;
 }
 
 .benefit-logo{
-    width: 264px;
-    height: 112px;
-    display: flex;
-    background-color: var(--background-color-light);
-    border-radius: 4px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
+    display: none;
+}
+
+@media only screen and (min-width: 1158px) {
+  .benefit-block{
+    padding: 120px 0;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+    .benefits {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+        }
+    
+    .benefit {
+            width: calc((100% - 72px) / 4);
+        }
+    
+    .benefit-logo {
+            width: 264px;
+            height: 112px;
+            display: flex;
+            background-color: var(--background-color-light);
+            border-radius: 4px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+        }
 }
 
 .benefits .third-hl{
     margin-bottom: 8px;
-    text-align: left;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: 0.72px;
 }
+@media only screen and (min-width: 1158px) {
+.benefits .third-hl {
+        text-align: left;
+    }
+}
+
 .paragraf{
     letter-spacing: 0.02em;
     font-size: 16px;
@@ -570,6 +613,14 @@ Benefit(2nd section) styles
 Progects(3rd section) styles
 ---------------------------------------
 */
+
+.mp-projects{
+    display: none;
+}
+
+@media only screen and (min-width: 1158px) {
+
+
 .mp-projects{
     padding-bottom: 120px;
 }
@@ -583,7 +634,7 @@ Progects(3rd section) styles
     border: 1px solid var(--border-light);
     width: calc((100% - 48px) / 3);
 }
-
+}
 /*
 ---------------------------------------
 Team(4th section) styles
@@ -591,14 +642,20 @@ Team(4th section) styles
 */
 .team{
     background-color: var(--background-color-light);
+    padding: 96px 0;
+}
+@media only screen and (min-width: 1158px) {
+   .team{
     padding: 120px 0;
+  }
+}
+@media only screen and (min-width: 1158px) {
+.team-members {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
 }
 
-
-.team-members{
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
 
 }
 
@@ -606,10 +663,23 @@ Team(4th section) styles
     background-color: var(--text-color-white);
     letter-spacing: 0.02em;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    width: calc((100% - 72px) / 4);
     border-radius: 0px 0px 4px 4px;
+    width: 264px;
+    display: block;
+    margin: 0 auto;
 }
 
+@media only screen and (min-width: 348px) and (max-width: 767px){
+   .card:not(:last-child){
+    margin-bottom: 72px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .card {
+    width: calc((100% - 72px) / 4);
+  }
+}
 .card-info{
     padding: 32px 0px;
 }
@@ -663,16 +733,37 @@ Team(4th section) styles
 Company(5th section) styles
 ---------------------------------------
 */
+.companies{
+    padding: 96px 0;
+}
 
+@media only screen and (min-width: 1158px){
 .companies{
     padding: 120px 0;
 }
-
+}
 
 .company{
     display: flex;
-    gap: 24px;
+    gap: 72px 16px;
+    flex-wrap: wrap;
+}
 
+@media only screen and (min-width: 1158px){
+    .company {
+    gap: 24px;
+    }
+}
+
+
+.customers{
+    width: calc((100%-16px)/2)
+}
+
+@media only screen and (min-width: 1158px){
+.customers{
+    width: calc((100% - 120px) / 6);
+}
 }
 
 .company-logo{
@@ -724,11 +815,25 @@ Footer styles
 
 .footer .container{
     display: flex;
-    align-items: baseline
+    flex-direction: column;
+    gap: 72px;
+    align-items: center;
+}
+
+
+@media only screen and (min-width: 1158px){
+    .footer .container{
+        
+        align-items: baseline;
+    }
+
+    .logo-wrapper {
+            margin-right: 120px;
+        }
 }
 
 .logo-wrapper{
-    margin-right: 120px;
+    text-align: center;
 }
 
 .logo-d{
@@ -753,12 +858,18 @@ Footer styles
 }
 footer .third-hl{
     color: var(--background-color-white);
-    text-align: left;
+    text-align: center;
     font-size: 16px;
     letter-spacing: 0.32px;
     margin-bottom: 16px;
     line-height: 1.5;
 }
+@media only screen and (min-width: 1158px) {
+footer .third-hl{
+    text-align: left;
+  }
+}
+
 .footer-social {
     display: flex;
     flex-shrink: 0;
@@ -790,11 +901,14 @@ footer .third-hl{
     background-color: var(--link-color-active-second);
 }
 
-.subscribe-form{
-    margin-left: 80px;
+@media only screen and (min-width: 1158px) {
+.subscribe-form {
+        margin-left: 80px;
+    }
 }
+
 .subscribe{
-    width: 264px;
+    width: 100%;
     height: 40px;
     border-radius: 4px;
     border: 1px solid var(--white, #FFF);
@@ -806,6 +920,12 @@ footer .third-hl{
     letter-spacing: 0.04em;
     padding-left: 16px;
     outline: transparent;
+}
+
+@media only screen and (min-width: 1158px) {
+.subscribe {
+    width: 264px;
+  }
 }
 
 .subscribe::placeholder{
@@ -826,11 +946,13 @@ footer .third-hl{
     color: var(--text-color-white);
     
 }
-
-.email-container{
-    display: flex;
-    gap: 24px;
+@media only screen and (min-width: 1158px) {
+.email-container {
+        display: flex;
+        gap: 24px;
+    }
 }
+
 
 .subscribe-btn{
     min-width: 165px;
