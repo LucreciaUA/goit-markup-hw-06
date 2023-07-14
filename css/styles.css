@@ -196,9 +196,19 @@ Header styles
 }
 
 .menu{
+    display: none;
+}
+
+.address{
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+   
+    
+.menu{
     display: flex;
     gap: 40px;
-
 }
 
 .menu .link{
@@ -211,7 +221,6 @@ Header styles
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .menu .link:focus, .menu .link:hover{
@@ -219,11 +228,14 @@ Header styles
 }
 .address{
     font-style: normal;
+    display: block;
 }
 
 .address .list{
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
 }
 .address .link{
     color: var(--text-color-main);
@@ -252,10 +264,17 @@ Header styles
     background-color: var(--link-color-active-first);
     flex-shrink: 0;
     border-radius: 2px;
-
-
+}
+  
 }
 
+@media only screen and (min-width: 1158px) {
+.address .list {
+        flex-direction: row;
+        gap: 40px;
+        font-size: 16px;
+    }
+}
 /*
 ---------------------------------------
 Hero(1st section) styles
@@ -566,13 +585,20 @@ Benefit(2nd section) styles
     padding: 120px 0;
   }
 }
+@media only screen and (min-width: 768px) {
 
-@media only screen and (min-width: 1158px) {
     .benefits {
             display: flex;
             justify-content: space-between;
             gap: 24px;
+            flex-wrap: wrap;
         }
+    
+        .benefit {
+            width: calc((100% - 24px) / 2);
+        }
+}
+@media only screen and (min-width: 1158px) {
     
     .benefit {
             width: calc((100% - 72px) / 4);
@@ -600,6 +626,7 @@ Benefit(2nd section) styles
 @media only screen and (min-width: 1158px) {
 .benefits .third-hl {
         text-align: left;
+        font-size: 20px;
     }
 }
 
@@ -649,9 +676,24 @@ Team(4th section) styles
     padding: 120px 0;
   }
 }
+.team-members{
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+.team-members{
+    flex-direction: row;
+    gap: 64px 24px;
+    flex-wrap: wrap;
+  }
+}
+
+
 @media only screen and (min-width: 1158px) {
 .team-members {
-        display: flex;
+        
         justify-content: space-between;
         gap: 24px;
 }
@@ -669,11 +711,7 @@ Team(4th section) styles
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 348px) and (max-width: 767px){
-   .card:not(:last-child){
-    margin-bottom: 72px;
-  }
-}
+
 
 @media only screen and (min-width: 1158px) {
   .card {
@@ -747,9 +785,10 @@ Company(5th section) styles
     display: flex;
     gap: 72px 16px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-@media only screen and (min-width: 1158px){
+@media only screen and (min-width: 768px){
     .company {
     gap: 24px;
     }
@@ -758,6 +797,12 @@ Company(5th section) styles
 
 .customers{
     width: calc((100%-16px)/2)
+}
+
+@media only screen and (min-width: minwidthpx) {
+.customers{
+    width: calc((100%-48px)/3);
+  }
 }
 
 @media only screen and (min-width: 1158px){
@@ -810,7 +855,13 @@ Footer styles
     color: var(--text-color-light);
     background-color: var(--background-color-dark);
     letter-spacing: 0.02em;
+    padding: 96px 0;
+}
+
+@media only screen and (min-width: 1158px) {
+   .footer{
     padding: 100px 0;
+  }
 }
 
 .footer .container{
@@ -821,19 +872,41 @@ Footer styles
 }
 
 
-@media only screen and (min-width: 1158px){
+@media only screen and (min-width: 768px){
     .footer .container{
-        
+        flex-direction: row;
         align-items: baseline;
+        gap: 0;
+        flex-wrap: wrap;
     }
 
     .logo-wrapper {
-            margin-right: 120px;
+            margin-right: 24px;
+            margin-bottom: 72px;
         }
 }
 
+@media only screen and (min-width: 1158px) {
+    .footer .container {
+            flex-wrap: nowrap;
+    }
+    .logo-wrapper {
+            margin-right: 120px;
+            margin-bottom: 0;
+        }
+    
+}
+
+
+
 .logo-wrapper{
     text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+   .logo-wrapper{
+    text-align: left;
+  }
 }
 
 .logo-d{
@@ -855,6 +928,8 @@ Footer styles
 
 .footer-p{
     max-width: 264px;
+    letter-spacing: 0.02em;
+
 }
 footer .third-hl{
     color: var(--background-color-white);
@@ -864,7 +939,8 @@ footer .third-hl{
     margin-bottom: 16px;
     line-height: 1.5;
 }
-@media only screen and (min-width: 1158px) {
+
+@media only screen and (min-width: 768px) {
 footer .third-hl{
     text-align: left;
   }
@@ -900,10 +976,27 @@ footer .third-hl{
 .footer-social-link:focus {
     background-color: var(--link-color-active-second);
 }
+.subscribe-form{
+    width: 100%;
+}
 
 @media only screen and (min-width: 1158px) {
 .subscribe-form {
         margin-left: 80px;
+        width: fit-content;
+    }
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .email-container {
+        flex-direction: row;
     }
 }
 
@@ -922,7 +1015,7 @@ footer .third-hl{
     outline: transparent;
 }
 
-@media only screen and (min-width: 1158px) {
+@media only screen and (min-width: 768px) {
 .subscribe {
     width: 264px;
   }
@@ -944,23 +1037,23 @@ footer .third-hl{
     margin-bottom: 16px;
     display: block;
     color: var(--text-color-white);
-    
-}
-@media only screen and (min-width: 1158px) {
-.email-container {
-        display: flex;
-        gap: 24px;
-    }
+    text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+.subscribe-footer{
+    text-align: left;
+  }
+}
 
 .subscribe-btn{
-    min-width: 165px;
+    max-width: 165px;
     height: 40px;
     display: inline-flex;
     padding: 8px 24px;
     justify-content: center;
     align-items: center;
+    align-self: center;
     background-color: var(--link-color-peace-first);
     border: none;
     color: var(--text-color-white);
