@@ -180,6 +180,7 @@ Header styles
 
 }
 
+
 .logo{
     color: var(--logo-color-web);
     font-family: 'Raleway', sans-serif;
@@ -195,6 +196,14 @@ Header styles
     color: var(--text-color-headline);
 }
 
+.menu-mobile{
+    stroke: var(--background-color-dark);
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    margin: 24px 0;
+}
+
 .menu{
     display: none;
 }
@@ -204,7 +213,9 @@ Header styles
 }
 
 @media only screen and (min-width: 768px) {
-   
+.menu-mobile{
+    display: none;
+}   
     
 .menu{
     display: flex;
@@ -275,6 +286,90 @@ Header styles
         font-size: 16px;
     }
 }
+/*Mobile menu*/
+.menu-mobile:hover,
+.menu-mobile:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    background-color: var(--background-color-white);
+    z-index: 999;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #fff;
+}
+
+.mobile-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.mobile-menu .link {
+    display: block;
+}
+
+.mobile-menu .second-hl{
+text-align: left;
+margin-bottom: 40px;
+font-weight: 700;
+}
+
+.mobile-menu .active-page{
+    color: var(--link-color-active-first);
+}
+
+.menu-social{
+    display: flex;
+flex-shrink: 0;
+    gap: 16px;
+}
+
+.menu-social-list {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-social-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--link-color-peace-first);
+    margin-top: 8px;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-social-link .icon {
+    fill: var(--icon-light-fill);
+}
+
+.menu-social-link:hover,
+.menu-social-link:focus {
+    background-color: var(--link-color-active-first);
+}
 /*
 ---------------------------------------
 Hero(1st section) styles
@@ -304,8 +399,8 @@ Hero(1st section) styles
     border-radius: 4px;
     margin: 0 auto;
     transition-property: background-color;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-btn:hover, .order-btn:focus{
@@ -1079,16 +1174,28 @@ Portfolio page styles
 ---------------------------------------
 |||||||||||||||||||||||||||||||||||||||
 */
-
 .portfolio{
-    padding: 96px 0 120px 0;
+    padding: 64px 0 96px 0;
 }
+@media only screen and (min-width: 1156px) {
+.portfolio {
+        padding: 96px 0 120px 0;
+    }
+}
+
 
 .filter{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     margin-bottom: 72px;
     gap: 24px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+.filter{
+    justify-content: center;
+  }
 }
 .filter-option{
     background-color: var(--background-color-light);
@@ -1111,10 +1218,34 @@ Portfolio page styles
     gap: 48px 24px;
 
 }
+
+@media only screen and (min-width: 768px) {
+.projects{
+    gap: 72px 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+.projects{
+    gap: 48px 24px;
+  }
+}
 .project-card{
     letter-spacing: 0.02em;
-    width: calc((100% - 48px) / 3);
+
     
+}
+
+@media only screen and (min-width: 768px) {
+.project-card{
+    width: calc((100% - 48px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+.project-card{
+    width: calc((100% - 48px) / 3);
+  }
 }
 
 .project-card:hover{
@@ -1155,7 +1286,15 @@ margin-bottom: 8px;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-card:hover .overlay {
+
+.project-card:active .overlay {
     transform: translateY(0)
+}
+
+@media only screen and (min-width: 1158px) {
+.project-card:hover .overlay {
+        transform: translateY(0)
     }
+}
+
 
