@@ -320,7 +320,7 @@ Header styles
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-content: space-between;
+    height: 100%;
 }
 
 .menu-wrapper:last-child{
@@ -358,7 +358,6 @@ margin-bottom: 40px;
 }
 
 .menu-address .second-hl{
-    
     color: var(--text-color-accent);
 }
 
