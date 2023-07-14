@@ -316,7 +316,16 @@ Header styles
     right: 16px;
     color: #fff;
 }
+.menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
 
+.menu-wrapper:last-child{
+    align-self: end;
+}
 .mobile-menu {
     padding: 0;
     margin: 0;
@@ -337,10 +346,30 @@ font-weight: 700;
     color: var(--link-color-active-first);
 }
 
+.menu-address{
+    
+    font-style: normal;
+}
+
+.menu-address .link{
+display: block;
+text-align: left;
+margin-bottom: 40px;
+}
+
+.menu-address .second-hl{
+    
+    color: var(--text-color-accent);
+}
+
+.menu-address .third-hl{
+    color: #434455;
+}
+
 .menu-social{
     display: flex;
 flex-shrink: 0;
-    gap: 16px;
+    gap: 56px;
 }
 
 .menu-social-list {
