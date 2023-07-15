@@ -357,7 +357,7 @@ margin-bottom: 40px;
 
 .menu-address .second-hl{
     color: var(--text-color-accent);
-    font-size: 9vw;
+    font-size: 8vw;
 }
 
 .menu-address .third-hl{
@@ -373,6 +373,7 @@ flex-shrink: 0;
 .menu-social-list {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
 }
 
 .menu-social-link {
@@ -384,6 +385,7 @@ flex-shrink: 0;
     align-items: center;
     background-color: var(--link-color-peace-first);
     margin-top: 8px;
+
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
