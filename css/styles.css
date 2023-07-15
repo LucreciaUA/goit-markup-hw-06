@@ -18,6 +18,7 @@
 --border-light: #E7E9FC;
 --button-color-filter-border: #E5E5E5;
 --border-focus-color: #4D5AE5;
+--border-color-dark: #2E2F42;
 /*interactive*/
 --link-color-active-second: #31D0AA;
 --company-logo-peace: #8E8F99;
@@ -78,7 +79,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
 }
 
 .container{
-    min-width: 396px;
+    min-width: 320px;
     max-width: 428px;
     margin: 0 auto;
     padding: 0 16px;
@@ -298,7 +299,7 @@ Header styles
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 40px;
+    padding: 80px 40px 40px 40px;
     background-color: var(--background-color-white);
     z-index: 999;
 
@@ -312,9 +313,19 @@ Header styles
 
 .menu-container .menu-toggle {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    color: #fff;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background-color: hsl(234, 78%, 95%, 0.1);
+    border-radius: 50%;
+    border: 1px solid hsl(237, 18%, 22%, 0.1);
+    fill: var(--text-color-headline);
+    stroke: var(--text-color-headline);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
 }
 .menu-wrapper{
     display: flex;
@@ -358,6 +369,7 @@ margin-bottom: 40px;
 .menu-address .second-hl{
     color: var(--text-color-accent);
     font-size: 8vw;
+    font-weight: 700;
 }
 
 .menu-address .third-hl{
@@ -407,7 +419,7 @@ Hero(1st section) styles
 
 .hero{
     background-color: var(--background-color-dark);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/people-office.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/index/people-office.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 1440px;
@@ -416,6 +428,14 @@ Hero(1st section) styles
     background-position: center;
     margin: 0 auto;
 
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx){
+    .hero{
+        background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/index/people-office@2x.jpg);
+    }
 }
 
 .order-btn{
@@ -541,7 +561,7 @@ modal window
     font-weight: 400;
     line-height: 1.17;
     letter-spacing: 0.48px;
-    color: var(--text-color-modal);
+    color: var(--text-color-modal-input);
     margin-bottom: 4px;
 
 }
@@ -709,10 +729,16 @@ Benefit(2nd section) styles
     padding: 120px 0;
   }
 }
+ .benefits{
+    display: flex;
+    flex-direction: column;
+ }
+
 @media only screen and (min-width: 768px) {
 
     .benefits {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             gap: 24px;
             flex-wrap: wrap;
@@ -910,6 +936,12 @@ Company(5th section) styles
     gap: 72px 16px;
     flex-wrap: wrap;
     justify-content: center;
+}
+@media only screen and (max-width: 400px) {
+.company{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media only screen and (min-width: 768px){
@@ -1204,8 +1236,15 @@ Portfolio page styles
 |||||||||||||||||||||||||||||||||||||||
 */
 .portfolio{
-    padding: 64px 0 96px 0;
+    padding: 48px 0;
 }
+
+@media only screen and (min-width: 768px) {
+.portfolio{
+    padding: 64px 0 96px 0;
+  }
+}
+
 @media only screen and (min-width: 1156px) {
 .portfolio {
         padding: 96px 0 120px 0;
@@ -1216,14 +1255,20 @@ Portfolio page styles
 .filter{
     display: flex;
     justify-content: start;
-    margin-bottom: 72px;
+    margin-bottom: 48px;
     gap: 24px;
     flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) {
+.filter{
+    margin-bottom: 64px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
 .filter{
     justify-content: center;
+    margin-bottom: 72px;
   }
 }
 .filter-option{

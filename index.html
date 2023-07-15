@@ -88,9 +88,18 @@
         <div class="container">
             <h2 class="second-hl">What are we doing</h2>
             <ul class="list projects-exemples">
-                <li class="exemple"><img src="./images/pcapp.jpg" width="360" height="300" alt="pc app"></li>
-                <li class="exemple"><img src="./images/phoneapp.jpg" width="360" height="300"  alt="phone app"></li>
-                <li class="exemple"><img src="./images/phone&mac.jpg" width="360" height="300"  alt="phone & mac"></li>
+                <li class="exemple">
+                    <img 
+                    srcset="./images/index/pcapp.jpg 1x, ./images/index/pcapp@2x.jpg 2x"
+                    src="./images/index/pcapp.jpg" width="360" height="300" alt="pc app"></li>
+                <li class="exemple">
+                    <img 
+                    srcset="./images/index/phoneapp.jpg 1x, ./images/index/phoneapp@2x.jpg 2x"
+                    src="./images/index/phoneapp.jpg" width="360" height="300"  alt="phone app"></li>
+                <li class="exemple">
+                    <img 
+                    srcset="./images/index/phone&mac.jpg 1x, ./images/index/phone&mac@2x.jpg 2x"
+                    src="./images/index/phone&mac.jpg" width="360" height="300"  alt="phone & mac"></li>
             </ul>
         </div>
     </section>
@@ -99,7 +108,9 @@
             <h2 class="second-hl">Our Team</h2>
             <ul class="list team-members">
                 <li class="card">
-                    <img src="./images/mark_guerrero.jpg" width="264" height="260" alt="mark guerrero. Product Designer">
+                    <img 
+                    srcset="./images/index/mark_guerrero.jpg 1x, ./images/index/mark_guerrero@2x.jpg 2x"
+                    src="./images/index/mark_guerrero.jpg" width="264" height="260" alt="mark guerrero. Product Designer">
                     <div class="card-info">
                         <h3 class="third-hl">Mark Guerrero</h3>
                         <p class="paragraf">Product Designer</p>
@@ -120,7 +131,9 @@
                     </div>
                 </li>
                 <li class="card">
-                    <img src="./images/tom_ford.jpg" width="264" height="260" alt="tom ford. Frontend Developer">
+                    <img 
+                    srcset="./images/index/tom_ford.jpg 1x, ./images/index/tom_ford@2x.jpg 2x"
+                    src="./images/index/tom_ford.jpg" width="264" height="260" alt="tom ford. Frontend Developer">
                     <div class="card-info">
                         <h3 class="third-hl">Tom Ford</h3>
                         <p class="paragraf">Frontend Developer</p>
@@ -141,7 +154,9 @@
                     </div>
                 </li>
                 <li class="card">
-                    <img src="./images/camila_garcia.jpg" width="264" height="260" alt="camila garcia. Marketing">
+                    <img 
+                    srcset="./images/index/camila_garcia.jpg 1x, ./images/index/camila_garcia@2x.jpg 2x"
+                    src="./images/index/camila_garcia.jpg" width="264" height="260" alt="camila garcia. Marketing">
                     <div class="card-info">
                         <h3 class="third-hl">Camila Garcia</h3>
                         <p class="paragraf">Marketing</p>
@@ -162,7 +177,9 @@
                     </div>
                 </li>
                 <li class="card">
-                    <img src="./images/daniel_wilson.jpg" width="264" height="260" alt="daniel wilson. UI Designer">
+                    <img 
+                    srcset="./images/index/daniel_wilson.jpg 1x, ./images/index/daniel_wilson@2x.jpg 2x"
+                    src="./images/index/daniel_wilson.jpg" width="264" height="260" alt="daniel wilson. UI Designer">
                     <div class="card-info">
                         <h3 class="third-hl">Daniel Wilson</h3>
                         <p class="paragraf">UI Designer</p>
@@ -298,10 +315,8 @@
     </div>
     <div class="menu-container js-menu-container" id="mobile-menu">
         <button class="menu-toggle js-close-menu">
-            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
+            <svg class="icon" width="8" height="8">
+                <use href="./images/icons.svg#icon-close"> </use>
             </svg>
         </button>
     
