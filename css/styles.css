@@ -323,9 +323,7 @@ Header styles
     height: 100%;
 }
 
-.menu-wrapper:last-child{
-    align-self: end;
-}
+
 .mobile-menu {
     padding: 0;
     margin: 0;
@@ -359,6 +357,7 @@ margin-bottom: 40px;
 
 .menu-address .second-hl{
     color: var(--text-color-accent);
+    font-size: 9vw;
 }
 
 .menu-address .third-hl{
