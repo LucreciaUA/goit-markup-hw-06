@@ -299,6 +299,7 @@ Header styles
     left: 0;
     width: 100vw;
     height: 100vh;
+height: calc(var(--vh, 1vh) * 100);
     padding: 80px 40px 40px 40px;
     background-color: var(--background-color-white);
     z-index: 999;
