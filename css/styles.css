@@ -47,6 +47,24 @@ body{
     font-size: 16px;
     background-color: var(--background-color-white);
     margin: 0 auto;
+    
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #F5F5F5;
+    height: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4D5AE5;
+    border-radius: 7px;
+    border: 1px solid #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb:focus{
+    background-color: #404BBF;
+    transform: scale(2);
 }
 
 img{
@@ -468,6 +486,8 @@ modal window
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: scroll;
+    
 }
 
 .is-hidden{
@@ -490,7 +510,7 @@ modal window
     animation-duration: 300ms;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 72px 24px 24px 24px;
-    
+
 }
 
 .modal .icon{
@@ -583,6 +603,7 @@ modal window
     color: var(--text-color-main);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: transparent;
+    
 }
 
 .modal-input:focus{
